@@ -2,8 +2,10 @@
   <div class="mb-40">
     <div class="bg-gray-900">
       <nav class="flex justify-center py-4">
-        <div class="flex justify-between w-3/5">
-          <h2 class="text-white text-xl font-bold">Charles Poullain</h2>
+        <div class="flex justify-between w-full sm:w-4/5 md:3/5">
+          <h2 class="text-white text-xl font-bold hidden sm:block">
+            Charles Poullain
+          </h2>
           <!-- <ul class="flex space-x-6">
             <li
               class="uppercase text-primary-600 border-primary-600 border-b-4 font-bold"
@@ -16,9 +18,11 @@
           </ul> -->
         </div>
       </nav>
-      <div class="flex justify-center pt-20 pb-40">
-        <div class="flex justify-around w-3/5">
-          <div class="w-1/2">
+      <div class="flex justify-center pt-4 sm:pt-20 pb-40">
+        <div
+          class="flex justify-around flex-col sm:flex-row w-full sm:w-4/5 md:3/5 mx-4 sm:mx-0"
+        >
+          <div class="w-full sm:w-1/2 mb-10 sm:mb-0">
             <h1 class="text-white text-4xl font-bold">Charles Poullain</h1>
             <h3 class="text-primary-600 text-xl font-medium">
               APIs & Applications
@@ -35,14 +39,14 @@
               Contactez moi
             </button>
           </div>
-          <div class="flex justify-center w-1/2">
+          <div class="flex justify-center w-full sm:w-1/2">
             <head-illustration></head-illustration>
           </div>
         </div>
       </div>
     </div>
     <div class="flex justify-center -mt-20">
-      <div class="w-3/5 bg-white rounded-3xl">
+      <div class="w-full sm:w-4/5 md:3/5 bg-white rounded-3xl">
         <div class="flex justify-around">
           <div class="flex items-center flex-col">
             <h2 class="text-center font-bold text-3xl py-6 text-gray-900">
@@ -54,11 +58,11 @@
             </h3>
           </div>
         </div>
-        <div class="flex flex-row items-center flex-wrap">
+        <div class="flex flex-col sm:flex-row items-center flex-wrap">
           <div
             v-for="skill in skills"
             :key="skill.tite"
-            class="w-1/3 px-10 py-6"
+            class="w-full sm:w-1/2 md:w-1/3 px-10 py-6"
           >
             <img class="w-1/3 mb-3" :src="skill.img" />
             <h3 class="text-gray-900 text-xl font-semibold mb-2">
@@ -70,7 +74,7 @@
       </div>
     </div>
     <div class="flex justify-center -mt-20 pb-10 bg-gray-100">
-      <div class="w-3/5 mt-40">
+      <div class="w-full sm:w-4/5 md:3/5 mt-40">
         <h3 class="text-center text-gray-900 text-2xl font-semibold mb-10">
           Les technologies que j’utilise
         </h3>
@@ -81,33 +85,41 @@
           Pour répondre à ces besoins, je suis devenu polyvalent en utilisant
           des technologies modernes.
         </h5>
-        <div class="flex flex-row items-center justify-start flex-wrap mt-8">
-          <div v-for="tool in mainTools" :key="tool.title" class="w-1/4 px-6">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-start flex-wrap mt-8 space-y-10 md:space-y-0"
+        >
+          <div
+            v-for="tool in mainTools"
+            :key="tool.title"
+            class="flex items-center justify-center sm:block w-full sm:w-1/2 md:w-1/4 px-6"
+          >
             <img class="w-1/3 mb-3" :src="tool.img" />
-            <h3 class="text-gray-900 text-xl font-semibold mb-2">
-              {{ tool.title }}
-            </h3>
-            <p class="text-sm text-gray-600">{{ tool.body }}</p>
+            <div class="ml-4 sm:ml-0">
+              <h3 class="text-gray-900 text-xl font-semibold mb-2">
+                {{ tool.title }}
+              </h3>
+              <p class="text-sm text-gray-600">{{ tool.body }}</p>
+            </div>
           </div>
         </div>
         <div class="flex flex-col justify-center mt-10">
-          <div class="flex justify-center space-x-10">
-            <h4
+          <div class="flex flex-row flex-wrap justify-center space-x-10">
+            <p
               v-for="tool in tools1"
               :key="tool"
               class="font-bold text-gray-500 text-md"
             >
               {{ tool }}
-            </h4>
+            </p>
           </div>
-          <div class="flex justify-center space-x-8 mt-6">
-            <h4
+          <div class="flex flex-row flex-wrap justify-center space-x-8 mt-6">
+            <p
               v-for="tool in tools2"
               :key="tool"
               class="font-semibold text-gray-400 text-sm"
             >
               {{ tool }}
-            </h4>
+            </p>
           </div>
         </div>
       </div>
